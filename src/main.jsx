@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import SignUp from './pages/Auth/SignUp.jsx';
+import SignIn from './pages/Auth/SignIn.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path:'/signup',
     element:<SignUp></SignUp>
+  },
+  {
+    path:'signin',
+    element:<SignIn></SignIn>
   }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
