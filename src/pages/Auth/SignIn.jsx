@@ -4,15 +4,12 @@ import * as Yup from 'yup';
 const SignIn = () => {
     const formik = useFormik({
         initialValues: {
-            fullName: '',
+            
             email: '',
-            image: '',
+          
             password: ''
         },
         validationSchema: Yup.object({
-            fullName: Yup.string()
-                .max(15, 'Must be 15 characters or less')
-                .required('Required'),
             email: Yup.string().email('Invalid email address').required('Required'),
             password: Yup.string()
                 .required("Please enter a password")
@@ -21,7 +18,10 @@ const SignIn = () => {
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
                     'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'
                 ),
-        })
+        }),
+        onSubmit: values => {
+            console.log(values)
+          },
     })
     return (
         <div>

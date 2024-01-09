@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -8,20 +7,25 @@ import {
 } from "react-router-dom";
 import SignUp from './pages/Auth/SignUp.jsx';
 import SignIn from './pages/Auth/SignIn.jsx';
+import Dashboard from './pages/Dashboard/Dashboard.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
+    element: <Dashboard></Dashboard>,
+    children:[
+      {
+        path:'signup',
+        element:<SignUp></SignUp>
+      },
+      {
+        path:'signin',
+        element:<SignIn></SignIn>
+      },
+    ]
   },
-  {
-    path:'/signup',
-    element:<SignUp></SignUp>
-  },
-  {
-    path:'signin',
-    element:<SignIn></SignIn>
-  }
+ 
+  
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -21,10 +21,15 @@ const SignUp = () => {
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
                     'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character'
                 ),
-        })
+        }),
+        onSubmit: values => {
+            console.log(values)
+          },
+          
     })
     return (
         <div>
+            <img src="" alt="" />
 
             <form onSubmit={formik.handleSubmit} className='bg-primary py-12   lg:w-1/3 mx-auto rounded-lg shadow-lg'>
                 <h2 className='text-2xl font-bold text-white pb-8'>Please Sign up</h2>
